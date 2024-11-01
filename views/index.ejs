@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= description %></h1>
+    <p id="token-display"></p>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcFp3EqAAAAACAaADcnKpf5nh7H62PZFIzr6g34"></script>
+
+    <script>
+      grecaptcha.ready(function () {
+        grecaptcha.execute('6LcFp3EqAAAAACAaADcnKpf5nh7H62PZFIzr6g34').then(function (token) {
+          document.getElementById('token-display').textContent = token
+        })
+      })
+    </script>
+  </body>
+</html>
