@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const bodyParser = require('body-parser')
+const { default: RecaptchaV3 } = require('node-recaptcha-v3')
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
@@ -15,19 +16,17 @@ app.get('/', (req, res) => {
   })
 })
 
-const { default: Recaptcha } = require('node-recaptcha-v3')
-
-const recaptcha = new Recaptcha({
-  secretKey: '6LcFp3EqAAAAAHeyumi5hMzSBIlpggt0Vz-XgpG6'
+const recaptchaV3 = new RecaptchaV3({
+  secretKey: '6LcoOHIqAAAAAEkzmwSiBStyELshcU_FUc41S-A5'
 })
 
-app.post('/test', recaptcha.v3(0.6, 401, 'Your are a robot'), async (req, res) => {
+app.post('/test', recaptchaV3.verify(0.6, 401, 'Your are a robot'), async (req, res) => {
   const query = req.query
   const params = req.params
   const body = req.body
   const headers = req.headers
   const ip = req.ip
-  const score = req.recaptchaV3Score
+  const score = req.reCaptchaV3Score
 
   return res.json({ query, params, body, headers, ip, score })
 })
