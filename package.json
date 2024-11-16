@@ -1,7 +1,11 @@
 {
-  "name": "example",
+  "name": "node-recaptcha-v3-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "Example for using node-recaptcha-v3 package",
+  "author": "Vo Duc Huy <voduchuy2001@gmail.com>",
+  "maintainers": [
+    "voduchuy"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,17 +13,28 @@
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "Google-reCAPTCHA-v3",
+    "reCAPTCHA",
+    "reCAPTCHA v3",
+    "nodejs",
+    "express",
+    "backend"
+  ],
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "node-recaptcha-v3": "^1.0.34"
   },
   "devDependencies": {
     "nodemon": "^3.1.7",
     "prettier": "^3.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voduchuy2001/node-recaptcha-v3-example"
   }
 }
